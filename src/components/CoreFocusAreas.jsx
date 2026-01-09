@@ -1,111 +1,116 @@
+import React from "react";
+import { motion } from "framer-motion";
 import Section from "./Section";
 
 const areas = [
   {
     icon: "₹",
     title: "Startup Support & Entrepreneurship",
-    description:
-      "Enabling innovation, enterprise creation, and sustainable economic growth.",
+    description: "Enabling innovation, enterprise creation, and sustainable economic growth.",
   },
   {
     icon: "✶",
     title: "Art, Culture & Sports Promotion",
-    description:
-      "Preserving cultural identity while creating global exposure for talent.",
+    description: "Preserving cultural identity while creating global exposure for talent.",
   },
   {
     icon: "🌐",
     title: "Skilling & Employment Generation",
-    description:
-      "Preparing youth for future-ready jobs and entrepreneurship.",
+    description: "Preparing youth for future-ready jobs and entrepreneurship.",
   },
   {
     icon: "⟡",
     title: "Policy Advocacy & Representation",
-    description:
-      "Ensuring regional and diaspora voices are heard in policy dialogue.",
+    description: "Ensuring regional and diaspora voices are heard in policy dialogue.",
   },
 ];
 
 function CoreFocusAreas() {
   return (
-    <Section id="focus-areas" className="relative overflow-hidden py-20 sm:py-28">
-      {/* Background Ambience - Subtle and Professional */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 opacity-[0.4] [background:radial-gradient(1200px_circle_at_50%_50%,rgba(255,255,255,0.8),transparent_60%)]" />
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[color:var(--color-border)] to-transparent opacity-50" />
+    <Section id="focus-areas" className="relative overflow-hidden py-24 sm:py-32 bg-white">
+      {/* Subtle Background Elements */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -top-[10%] -left-[10%] h-[40%] w-[40%] rounded-full bg-[color:var(--color-gold)]/5 blur-[120px]" />
+        <div className="absolute -bottom-[10%] -right-[10%] h-[40%] w-[40%] rounded-full bg-[color:var(--color-peacock)]/5 blur-[120px]" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Header - Minimalist */}
-        <div className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 rounded-full border border-[color:var(--color-border)] bg-white/70 px-4 py-2 text-xs font-semibold tracking-wide text-[color:var(--color-peacock)]">
-            <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--color-gold)]" />
-            OUR CORE FOCUS
-            <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--color-gold)]" />
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Header Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-20"
+        >
+          <span className="inline-flex items-center gap-3 rounded-full border border-[color:var(--color-gold)]/20 bg-[color:var(--color-gold)]/5 px-5 py-2 text-[10px] font-black tracking-[0.2em] text-[color:var(--color-gold)] uppercase">
+            Strategic Pillars
           </span>
-          <h2 className="mt-5 text-3xl font-bold text-[color:var(--color-brand)]">
-            Our Core Focus Areas
+          <h2 className="mt-6 text-4xl font-serif font-bold text-[color:var(--color-brand)] sm:text-5xl">
+            Our Core <span className="italic font-light">Focus Areas</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-[color:var(--color-ink)]/65">
-            PURBI works across four key focus areas that address both immediate needs and long-term development.
+          <div className="mt-6 mx-auto h-px w-24 bg-gradient-to-r from-transparent via-[color:var(--color-gold)] to-transparent" />
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-[color:var(--color-ink)]/60 leading-relaxed">
+            Addressing immediate regional challenges while building the infrastructure for a prosperous tomorrow.
           </p>
-        </div>
+        </motion.div>
 
-        {/* The "Pillars" Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative">
-          
-          {/* Decorative Horizontal Line for Desktop (Top) */}
-          <div className="hidden lg:block absolute top-0 left-4 right-4 h-px bg-[color:var(--color-border)]/40" />
-
+        {/* Focus Areas Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-[color:var(--color-border)]/50">
           {areas.map((area, index) => (
-            <div
+            <motion.div
               key={index}
-              className={`
-                group relative p-8 lg:p-10 flex flex-col items-start transition-all duration-500
-                /* Border Logic */
-                border-b border-[color:var(--color-border)]/40 lg:border-b-0
-                ${index % 2 === 0 ? "md:border-r" : ""} /* Add right border to every 2nd item on tablet */
-                lg:border-r lg:border-[color:var(--color-border)]/40
-                /* Remove right border from last item on desktop */
-                ${index === areas.length - 1 ? "lg:border-r-0" : ""}
-                
-                /* Hover Effect: Subtle background shift */
-                hover:bg-white/40
-              `}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              className="group relative flex flex-col p-8 sm:p-12 border-r border-b border-[color:var(--color-border)]/50 bg-white hover:bg-[#fffcf7] transition-colors duration-500"
             >
-              {/* Vertical Line Highlight on Hover (Left side) */}
-              <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[color:var(--color-gold)] scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+              {/* Animated Accent Bar */}
+              <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-[color:var(--color-gold)] scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-bottom" />
 
-              {/* Icon / Number */}
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[color:var(--color-peacock)]/5 text-[color:var(--color-peacock)] group-hover:bg-[color:var(--color-peacock)] group-hover:text-white transition-colors duration-300">
-                <span className="text-xl font-serif font-medium">{area.icon}</span>
+              {/* Icon / Branding */}
+              <div className="relative mb-10">
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[color:var(--color-brand)] text-white shadow-xl transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-[color:var(--color-gold)]/20">
+                  <span className="text-2xl font-serif">{area.icon}</span>
+                </div>
+                {/* Decorative background circle */}
+                <div className="absolute -bottom-2 -left-2 -z-10 h-14 w-14 rounded-xl border border-[color:var(--color-gold)]/30 group-hover:translate-x-4 group-hover:translate-y-1 transition-transform duration-700" />
               </div>
 
-              {/* Title */}
-              <h4 className="text-lg font-bold text-[color:var(--color-brand)] mb-3 group-hover:translate-x-1 transition-transform duration-300">
-                {area.title}
-              </h4>
+              {/* Text Content */}
+              <div className="flex flex-1 flex-col">
+                <h4 className="text-xl font-bold text-[color:var(--color-brand)] leading-tight mb-4 group-hover:text-[color:var(--color-peacock)] transition-colors">
+                  {area.title}
+                </h4>
+                <p className="text-sm leading-relaxed text-[color:var(--color-ink)]/70 mb-8 font-light">
+                  {area.description}
+                </p>
 
-              {/* Description */}
-              <p className="text-sm leading-relaxed text-[color:var(--color-ink)]/65 mb-6">
-                {area.description}
-              </p>
-
-              {/* "Learn More" Link - appears on hover or stays subtle */}
-              <div className="mt-auto pt-4 flex items-center text-[11px] font-bold uppercase tracking-wider text-[color:var(--color-gold)] opacity-80 group-hover:opacity-100">
-                <span className="border-b border-[color:var(--color-gold)] pb-0.5">
-                    Explore
-                </span>
-                <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                {/* Bottom Action */}
+                <div className="mt-auto inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-[color:var(--color-gold)]">
+                  <span className="relative overflow-hidden pb-1">
+                    Explore Initiatives
+                    <span className="absolute bottom-0 left-0 h-[1px] w-full bg-[color:var(--color-gold)] translate-x-[-105%] group-hover:translate-x-0 transition-transform duration-500" />
+                  </span>
+                  <span className="text-lg group-hover:translate-x-2 transition-transform duration-300">→</span>
+                </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-        
-        {/* Decorative Bottom Line for Desktop */}
-        <div className="hidden lg:block absolute bottom-0 left-4 right-4 h-px bg-[color:var(--color-border)]/40" />
 
+        {/* Bottom CTA / Metric */}
+        <motion.div 
+           initial={{ opacity: 0 }}
+           whileInView={{ opacity: 1 }}
+           transition={{ delay: 0.6 }}
+           className="mt-16 flex flex-col items-center justify-center gap-4 text-center"
+        >
+          <div className="h-12 w-px bg-gradient-to-b from-[color:var(--color-gold)] to-transparent" />
+          <p className="text-xs font-bold tracking-[0.3em] text-[color:var(--color-brand)]/40 uppercase">
+            Built for the community, by the community
+          </p>
+        </motion.div>
       </div>
     </Section>
   );
