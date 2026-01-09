@@ -1,24 +1,30 @@
 import Section from "./Section";
 import six_communities from "../assets/six_communities.png";
+import youthIcon from "../assets/Youth_and_Students.png";
+import entrepreneursIcon from "../assets/Entrepreneurs_and_MSMEs.png";
+import sportsIcon from "../assets/Sports_Professionals_and_Aspirants.png";
+import culturalIcon from "../assets/Cultural_Practitioners.png";
+import policymakersIcon from "../assets/Policymakers_and_Institutions.png";
+import diasporaIcon from "../assets/Global_Diaspora.png";
 
 const items = [
-  { title: "Youth and students", tag: "Skill • Guidance", icon: "✓" },
-  { title: "Entrepreneurs and MSMEs", tag: "Enterprise • Network", icon: "₹" },
+  { title: "Youth and students", tag: "Skill • Guidance", icon: youthIcon },
+  { title: "Entrepreneurs and MSMEs", tag: "Enterprise • Network", icon: entrepreneursIcon },
   {
     title: "Sports professionals and aspirants",
     tag: "Talent • Opportunity",
-    icon: "⟲",
+    icon: sportsIcon,
   },
-  { title: "Cultural practitioners", tag: "Heritage • Promotion", icon: "✶" },
+  { title: "Cultural practitioners", tag: "Heritage • Promotion", icon: culturalIcon },
   {
     title: "Policymakers and institutions",
     tag: "Forums • Dialogue",
-    icon: "⟡",
+    icon: policymakersIcon,
   },
   {
     title: "Global diaspora connected to Purvanchal and Bihar",
     tag: "Global • Collaboration",
-    icon: "◉",
+    icon: diasporaIcon,
   },
 ];
 
@@ -35,10 +41,8 @@ const pos = [
 function MiniItem({ icon, title, tag }) {
   return (
     <div className="w-[200px] rounded-2xl border border-[color:var(--color-border)] bg-white px-4 py-4 shadow-sm">
-      <div className="mx-auto grid h-10 w-10 place-items-center rounded-full border border-[color:var(--color-border)] bg-[color:var(--color-paper)]">
-        <span className="text-sm font-semibold text-[color:var(--color-peacock)]">
-          {icon}
-        </span>
+      <div className="mx-auto w-20 h-20 flex items-center justify-center">
+        <img src={icon} alt={title} className="w-full h-full object-contain" />
       </div>
       <div className="mt-2 text-center">
         <div className="text-sm font-semibold text-[color:var(--color-brand)] leading-snug">

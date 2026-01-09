@@ -1,23 +1,23 @@
 import { useEffect, useState } from "react";
 import Section from "./Section";
 
-const banners = ["/banner2.jpg"];
-
 function Hero() {
   return (
     <div id="home" className="relative overflow-hidden text-white">
       {/* Grid with fixed aspect ratio ensures consistent height */}
       <div className="grid w-full">
-        {banners.map((src, i) => (
-          <img
-            key={src}
-            src={src}
-            alt="Hero banner"
-            className="col-start-1 row-start-1 w-full h-auto object-cover object-center transition-opacity duration-700"
-          />
-        ))}
-        {/* overlay */}
-        <div className="col-start-1 row-start-1 w-full h-full bg-black/40 z-[1]" />
+        {/* Desktop banner */}
+        <img
+          src="/banner2.jpg"
+          alt="Hero banner"
+          className="hidden md:block col-start-1 row-start-1 w-full h-auto object-cover object-center transition-opacity duration-700"
+        />
+        {/* Mobile banner */}
+        <img
+          src="/banner2_mobile.jpg"
+          alt="Hero banner mobile"
+          className="block md:hidden col-start-1 row-start-1 w-full h-auto object-cover object-center transition-opacity duration-700"
+        />
 
         {/* Title overlay */}
         <div className="col-start-1 row-start-1 z-[2] flex flex-col items-center justify-center text-center px-4">

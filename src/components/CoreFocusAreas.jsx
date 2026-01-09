@@ -1,25 +1,29 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Section from "./Section";
+import entrepreneursIcon from "../assets/Entrepreneurs_and_MSMEs.png";
+import culturalIcon from "../assets/Cultural_Practitioners.png";
+import youthIcon from "../assets/Youth_and_Students.png";
+import policymakersIcon from "../assets/Policymakers_and_Institutions.png";
 
 const areas = [
   {
-    icon: "₹",
+    icon: entrepreneursIcon,
     title: "Startup Support & Entrepreneurship",
     description: "Enabling innovation, enterprise creation, and sustainable economic growth.",
   },
   {
-    icon: "✶",
+    icon: culturalIcon,
     title: "Art, Culture & Sports Promotion",
     description: "Preserving cultural identity while creating global exposure for talent.",
   },
   {
-    icon: "🌐",
+    icon: youthIcon,
     title: "Skilling & Employment Generation",
     description: "Preparing youth for future-ready jobs and entrepreneurship.",
   },
   {
-    icon: "⟡",
+    icon: policymakersIcon,
     title: "Policy Advocacy & Representation",
     description: "Ensuring regional and diaspora voices are heard in policy dialogue.",
   },
@@ -70,11 +74,11 @@ function CoreFocusAreas() {
 
               {/* Icon / Branding */}
               <div className="relative mb-10">
-                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[color:var(--color-brand)] text-white shadow-xl transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-[color:var(--color-gold)]/20">
-                  <span className="text-2xl font-serif">{area.icon}</span>
+                <div className="flex h-24 w-24 items-center justify-center rounded-xl bg-white border-2 border-[color:var(--color-border)] transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-[color:var(--color-gold)]/30">
+                  <img src={area.icon} alt={area.title} className="w-20 h-20 object-contain" />
                 </div>
                 {/* Decorative background circle */}
-                <div className="absolute -bottom-2 -left-2 -z-10 h-14 w-14 rounded-xl border border-[color:var(--color-gold)]/30 group-hover:translate-x-4 group-hover:translate-y-1 transition-transform duration-700" />
+                <div className="absolute -bottom-2 -left-2 -z-10 h-24 w-24 rounded-xl border-2 border-[color:var(--color-gold)]/40 group-hover:translate-x-4 group-hover:translate-y-1 transition-transform duration-700" />
               </div>
 
               {/* Text Content */}
