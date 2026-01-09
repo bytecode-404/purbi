@@ -9,6 +9,7 @@ import WhoWeServe from "./components/WhoWeServe";
 import CallToAction from "./components/CallToAction";
 import InstitutionalAlignment from "./components/InstitutionalAlignment";
 import Partners from "./components/Partners";
+import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
       <CallToAction />
       <InstitutionalAlignment />
       <Partners />
+      <ContactForm />
       <Footer />
     </div>
   );

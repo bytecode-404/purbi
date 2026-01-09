@@ -44,7 +44,7 @@ function Footer() {
                   ["Home", "#home"],
                   ["About", "#about"],
                   ["Programs", "#programs"],
-                  ["Get Involved", "#cta"],
+                  ["Get Involved", "#contact"],
                 ].map(([label, href]) => (
                   <li key={href}>
                     <a

@@ -34,8 +34,8 @@ function Hero() {
 
         {/* full-section link */}
         <a
-          href="#about"
-          aria-label="Learn more about PURBI"
+          href="#contact"
+          aria-label="Go to contact section"
           className="col-start-1 row-start-1 z-[3] block w-full h-full cursor-pointer focus:outline-none focus-visible:ring-4 focus-visible:ring-white/50"
         />
       </div>

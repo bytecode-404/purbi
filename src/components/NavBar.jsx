@@ -79,7 +79,7 @@ function NavBar() {
             {/* Right: CTA + hamburger */}
             <div className="flex items-center gap-2">
               <a
-                href="#cta"
+                href="#contact"
                 className="hidden sm:inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-[#2a1606]
                 shadow-[0_10px_30px_rgba(68,29,11,.18),0_2px_10px_rgba(20,48,69,.08)]
                 bg-[linear-gradient(135deg,var(--color-gold),var(--color-copper),var(--color-gold-2))]
@@ -171,7 +171,7 @@ function NavBar() {
               </div>
 
               <a
-                href="#cta"
+                href="#contact"
                 onClick={closeDrawer}
                 className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-2xl px-4 py-3 text-sm font-semibold text-[#2a1606]
                 shadow-[0_12px_40px_rgba(68,29,11,.18)]
