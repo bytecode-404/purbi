@@ -17,11 +17,11 @@ function WhatIsPurbi() {
           <div className="inline-flex flex-col items-center gap-3">
             <span className="inline-flex items-center gap-2 rounded-full border border-[color:var(--color-border)] bg-white/70 px-4 py-2 text-xs font-semibold tracking-wide text-[color:var(--color-peacock)] backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--color-gold)]" />
-              WHAT IS PURBI
+              PURVANCHAL & BIHAR INTERNATIONAL - PURBI
               <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--color-gold)]" />
             </span>
             <h2 className="text-2xl sm:text-3xl font-semibold text-[color:var(--color-brand)]">
-              A bridge between regional strength and global opportunity.
+              Progress happens fastest when people stay connected to their roots.
             </h2>
           </div>
         </div>

@@ -37,23 +37,18 @@ function CallToAction() {
             {/* badge */}
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold tracking-wide text-white/80">
               <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--color-gold)]" />
-              CALL TO ACTION
+              GET INVOLVED
               <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--color-gold)]" />
             </div>
 
             {/* heading */}
             <h2 className="mx-auto max-w-3xl text-2xl sm:text-3xl lg:text-4xl font-semibold text-white">
-              Join us in building a better future for{" "}
-              <span className="text-[color:var(--color-gold)]">
-                Purvanchal & Bihar
-              </span>
+              Join the Movement
             </h2>
 
             {/* subtext */}
             <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-white/70">
-              Be part of a collective effort to empower communities, strengthen
-              institutions, and connect regional potential with global
-              opportunity.
+              Whether you are an NRI, professional, entrepreneur, artist, or well-wisher — there is a place for you at PURBI. PURBI is about more than development; it is about identity, responsibility, and shared progress. Together, we can ensure that global success lights up local lives.
             </p>
 
             {/* actions */}
@@ -69,8 +64,7 @@ function CallToAction() {
                   hover:brightness-105 active:brightness-95 transition
                 "
               >
-                Get Involved Today
-                <span className="inline-block h-1.5 w-1.5 rounded-full bg-[color:var(--color-peacock)]/80" />
+                Learn How to Contribute →
               </a>
 
               <a

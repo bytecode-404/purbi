@@ -60,17 +60,16 @@ export default function WhoWeServe() {
         <div className="text-center mb-10">
           <span className="inline-flex items-center gap-2 rounded-full border border-[color:var(--color-border)] bg-white px-4 py-2 text-xs font-semibold tracking-wide text-[color:var(--color-peacock)]">
             <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--color-gold)]" />
-            WHO WE SERVE
+            OUR GLOBAL NETWORK
             <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--color-gold)]" />
           </span>
 
           <h2 className="mt-3 text-2xl sm:text-3xl font-semibold text-[color:var(--color-brand)]">
-            Six communities we support
+            A Movement of Belonging, Responsibility, and Pride
           </h2>
 
           <p className="mx-auto mt-2 max-w-2xl text-sm sm:text-base text-[color:var(--color-ink)]/65">
-            Programs and platforms that create pathways to opportunity,
-            visibility, and collaboration.
+            With chapters and members across 30 countries, PURBI mobilizes the strength of the global NRI community to drive impact on the ground in India. PURBI is not just an organisation, it is a movement of belonging, responsibility, and pride.
           </p>
         </div>
 

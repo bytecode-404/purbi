@@ -1,12 +1,6 @@
 import Section from "./Section";
 
 function InstitutionalAlignment() {
-  const orgs = [
-    "Bihar International Trade Organization",
-    "India Trade Promotion Organisation",
-    "Federation of Indian Export Organisations",
-  ];
-
   return (
     <Section id="institutional-alignment" className="relative overflow-hidden">
       {/* ambient background */}
@@ -27,12 +21,11 @@ function InstitutionalAlignment() {
           </span>
 
           <h2 className="mt-3 text-2xl sm:text-3xl font-semibold text-[color:var(--color-brand)]">
-            Built with best-practice thinking  grounded in social development.
+            Our Objectives
           </h2>
 
           <p className="mx-auto mt-2 max-w-2xl text-sm sm:text-base text-[color:var(--color-ink)]/65">
-            We learn from proven trade and development frameworks while keeping
-            people-first outcomes at the core.
+            PURBI's work is guided by clear objectives focused on long-term capacity building and inclusive growth.
           </p>
         </div>
 
@@ -47,9 +40,10 @@ function InstitutionalAlignment() {
 
                 <div className="space-y-6 pl-5 pt-3">
                   {[
-                    "Trade frameworks",
-                    "Institutional dialogue",
-                    "Social development",
+                    "Economic Empowerment",
+                    "Cultural Preservation & Promotion",
+                    "Global Collaboration",
+                    "Inclusivity & Sustainability",
                   ].map((item) => (
                     <div key={item} className="">
                       <div className="flex items-center gap-2">
@@ -78,7 +72,7 @@ function InstitutionalAlignment() {
                 INFORMS OUR APPROACH
               </div>
 
-              <div className="mt-4 flex flex-wrap gap-3">
+              {/* <div className="mt-4 flex flex-wrap gap-3">
                 {orgs.map((name) => (
                   <span
                     key={name}
@@ -88,27 +82,27 @@ function InstitutionalAlignment() {
                     {name}
                   </span>
                 ))}
-              </div>
+              </div> */}
             </div>
 
             {/* CTAs */}
             <div className="pt-4 flex flex-col sm:flex-row gap-3">
               <a
-                href="#programs"
+                href="#core-domains"
                 className="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-[#2a1606]
                 bg-[linear-gradient(135deg,var(--color-gold),var(--color-copper),var(--color-gold-2))]
                 hover:brightness-105 active:brightness-95 transition"
               >
-                See our programs →
+                Explore our programs →
               </a>
 
               <a
-                href="#contact"
+                href="#cta"
                 className="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold
                 border border-[color:var(--color-border)] bg-white/70 text-[color:var(--color-peacock)]
                 hover:bg-white transition"
               >
-                Partner with PURBI
+                Get Involved
               </a>
             </div>
           </div>

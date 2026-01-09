@@ -3,27 +3,27 @@ import Section from "./Section";
 const areas = [
   {
     icon: "₹",
-    title: "Economic Empowerment",
+    title: "Startup Support & Entrepreneurship",
     description:
-      "Enabling entrepreneurship, MSMEs, and professionals through structured economic engagement.",
+      "Enabling innovation, enterprise creation, and sustainable economic growth.",
   },
   {
     icon: "✶",
-    title: "Cultural Preservation",
+    title: "Art, Culture & Sports Promotion",
     description:
-      "Positioning regional heritage as global cultural and economic capital to drive tourism and pride.",
+      "Preserving cultural identity while creating global exposure for talent.",
   },
   {
     icon: "🌐",
-    title: "Global Collaboration",
+    title: "Skilling & Employment Generation",
     description:
-      "Building cross-border partnerships, diaspora engagement, and international dialogue.",
+      "Preparing youth for future-ready jobs and entrepreneurship.",
   },
   {
     icon: "⟡",
-    title: "Inclusivity & Sustainability",
+    title: "Policy Advocacy & Representation",
     description:
-      "Ensuring equitable, responsible, and long-term development outcomes for all communities.",
+      "Ensuring regional and diaspora voices are heard in policy dialogue.",
   },
 ];
 
@@ -45,10 +45,10 @@ function CoreFocusAreas() {
             <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--color-gold)]" />
           </span>
           <h2 className="mt-5 text-3xl font-bold text-[color:var(--color-brand)]">
-            Four pillars of prosperity.
+            Our Core Focus Areas
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-[color:var(--color-ink)]/65">
-            Designed to work together strengthening people, institutions, and outcomes.
+            PURBI works across four key focus areas that address both immediate needs and long-term development.
           </p>
         </div>
 

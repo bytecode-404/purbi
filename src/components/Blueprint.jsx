@@ -20,12 +20,11 @@ function Blueprint() {
           </span>
 
           <h2 className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-[color:var(--color-brand)]">
-            A long-term plan for people, progress & place
+            A new blueprint for growth
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl text-base text-[color:var(--color-ink)]/65">
-            Economic advancement, social empowerment, and environmental stewardship 
-            designed to work together.
+            True prosperity is built when economic advancement, social empowerment, and environmental stewardship are interwoven.
           </p>
         </div>
 
@@ -73,17 +72,14 @@ function Blueprint() {
           <div className="lg:col-span-7 flex flex-col gap-6">
             <div className="text-[15px] leading-relaxed text-[color:var(--color-ink)]/80 space-y-4">
               <p>
-                The future of Purvanchal and Bihar requires a new blueprint for growth.
-                Conventional socioeconomic models often prioritize short-term gains
-                over long-term community well-being, resulting in uneven development
-                and missed opportunities.
+                The future of Purvanchal and Bihar requires a new blueprint for growth. We recognize that conventional socioeconomic models often put short-term gains over long-term community well-being, resulting in uneven development and missed opportunities.
               </p>
               <p>
-                PURBI is grounded in the belief that true prosperity emerges when
+                PURBI is grounded on the principle that true prosperity is built when
                 <strong className="text-[color:var(--color-brand)] font-semibold"> economic advancement</strong>, 
                 <strong className="text-[color:var(--color-brand)] font-semibold"> social empowerment</strong>, and 
                 <strong className="text-[color:var(--color-brand)] font-semibold"> environmental stewardship </strong>
-                are interwoven into a single, durable framework.
+                are interwoven. Our roadmap moves beyond extraction to integration—channeling the region's immense energy, talent, and heritage into a self-reinforcing cycle of sustainable and inclusive progress for all.
               </p>
             </div>
 

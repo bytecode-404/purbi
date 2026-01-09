@@ -17,13 +17,26 @@ function Hero() {
           />
         ))}
         {/* overlay */}
-        <div className="col-start-1 row-start-1 w-full h-full bg-black/25 z-[1]" />
+        <div className="col-start-1 row-start-1 w-full h-full bg-black/40 z-[1]" />
+
+        {/* Title overlay */}
+        <div className="col-start-1 row-start-1 z-[2] flex flex-col items-center justify-center text-center px-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 drop-shadow-lg">
+            PURBI International
+          </h1>
+          <p className="text-xl sm:text-2xl md:text-3xl text-white/95 mb-2 drop-shadow-lg">
+            From the East to the World
+          </p>
+          <p className="text-lg sm:text-xl md:text-2xl text-white/90 drop-shadow-lg">
+            पुरबी इंटरनेशनल – पूर्व से विश्व तक
+          </p>
+        </div>
 
         {/* full-section link */}
         <a
           href="#about"
           aria-label="Learn more about PURBI"
-          className="col-start-1 row-start-1 z-[2] block w-full h-full cursor-pointer focus:outline-none focus-visible:ring-4 focus-visible:ring-white/50"
+          className="col-start-1 row-start-1 z-[3] block w-full h-full cursor-pointer focus:outline-none focus-visible:ring-4 focus-visible:ring-white/50"
         />
       </div>
     </div>

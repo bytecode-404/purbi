@@ -1,15 +1,26 @@
 import { useEffect, useState } from "react";
 
 function NavBar() {
-  const [open, setOpen] = useState(false);
+  const [drawerVisible, setDrawerVisible] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
-  // Lock scroll when menu is open
+  // Lock scroll when drawer is visible
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    document.body.style.overflow = drawerVisible ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
-  }, [open]);
+  }, [drawerVisible]);
+
+  const openDrawer = () => {
+    setIsClosing(false);
+    setDrawerVisible(true);
+  };
+
+  const closeDrawer = () => {
+    setIsClosing(true);
+    setTimeout(() => setDrawerVisible(false), 350);
+  };
 
   return (
     <header className="sticky top-0 z-40">
@@ -82,8 +93,8 @@ function NavBar() {
               <button
                 type="button"
                 aria-label="Open menu"
-                aria-expanded={open}
-                onClick={() => setOpen(true)}
+                aria-expanded={drawerVisible}
+                onClick={openDrawer}
                 className="md:hidden inline-flex items-center justify-center rounded-2xl border border-[color:var(--color-border)] bg-white/70 p-2 shadow-sm hover:bg-white"
               >
                 <div className="flex flex-col gap-1">
@@ -98,17 +109,17 @@ function NavBar() {
       </div>
 
       {/* Mobile overlay + drawer */}
-      {open && (
+      {drawerVisible && (
         <div className="fixed inset-0 z-50 md:hidden">
           {/* Backdrop */}
           <button
             aria-label="Close menu"
-            onClick={() => setOpen(false)}
-            className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"
+            onClick={closeDrawer}
+            className="absolute inset-0 bg-black/40 backdrop-blur-[2px] fade-in"
           />
 
           {/* Drawer */}
-          <div className="absolute right-0 top-0 h-full w-[86%] max-w-sm bg-[color:var(--color-paper)] shadow-2xl">
+          <div className={`absolute right-0 top-0 h-full w-[86%] max-w-sm bg-[color:var(--color-paper)] shadow-2xl ${isClosing ? "slide-out" : "slide-in"}`}>
             <div className="h-[2px] w-full bg-[linear-gradient(90deg,var(--color-gold),var(--color-copper),var(--color-peacock))]" />
 
             <div className="p-4 flex items-center justify-between">
@@ -129,7 +140,7 @@ function NavBar() {
               <button
                 type="button"
                 aria-label="Close menu"
-                onClick={() => setOpen(false)}
+                onClick={closeDrawer}
                 className="rounded-xl border border-[color:var(--color-border)] bg-white/70 p-2 hover:bg-white"
               >
                 <span className="block text-lg leading-none text-[color:var(--color-brand)]">
@@ -150,7 +161,7 @@ function NavBar() {
                   <a
                     key={href}
                     href={href}
-                    onClick={() => setOpen(false)}
+                    onClick={closeDrawer}
                     className="flex items-center justify-between rounded-2xl px-4 py-3 text-sm font-medium text-[color:var(--color-ink)]/85 hover:bg-black/5"
                   >
                     <span>{label}</span>
@@ -161,7 +172,7 @@ function NavBar() {
 
               <a
                 href="#cta"
-                onClick={() => setOpen(false)}
+                onClick={closeDrawer}
                 className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-2xl px-4 py-3 text-sm font-semibold text-[#2a1606]
                 shadow-[0_12px_40px_rgba(68,29,11,.18)]
                 bg-[linear-gradient(135deg,var(--color-gold),var(--color-copper),var(--color-gold-2))]
