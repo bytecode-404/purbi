@@ -25,7 +25,7 @@ function App() {
       <WhoWeServe />
       <CallToAction />
       <InstitutionalAlignment />
-      <Partners />
+     
       <ContactForm />
       <Footer />
     </div>
