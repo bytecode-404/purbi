@@ -46,7 +46,7 @@ function NavBar() {
                   PURBI International
                 </div>
                 <div className="text-[11px] text-[color:var(--color-ink)]/60">
-                  Purvanchal & Bihar Network
+                  Connect East to the World
                 </div>
               </div>
             </a>

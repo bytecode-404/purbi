@@ -81,18 +81,18 @@ function Footer() {
                   <span className="font-medium text-white">Email:</span>{" "}
                   hello@purbi.org
                 </li>
-                <li>
+                {/* <li>
                   <span className="font-medium text-white">Phone:</span>{" "}
                   +91 XXXXX XXXXX
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   <span className="font-medium text-white">Address:</span>{" "}
                   [Your Address]
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   <span className="font-medium text-white">LinkedIn:</span>{" "}
                   /purbi-international
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>

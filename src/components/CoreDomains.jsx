@@ -1,5 +1,5 @@
 import Section from "./Section";
-import geomap from "../assets/map2.jpg";
+import geomap from "../assets/-7e6c3fd0-e2c4-4762-a478-8aecd4fdc94f.png";
 
 function DomainItem({ num, title, description, tags = [] }) {
   return (
