@@ -1,12 +1,15 @@
 import { useState } from "react";
 import Section from "./Section";
 
+
 function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     organisation: "",
     designation: "",
+    country: "",
+    city: "",
     state: "",
     phoneNo: "",
   });
@@ -17,7 +20,7 @@ function ContactForm() {
 
   const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyOe6jApRf7KEVxsC-A8LtpujxZKmIygqg_2k9XOJWkIsSgkWBERkERObLcVmttM2Tf/exec";
 
-  const mandatoryFields = ["name", "email", "organisation", "state", "phoneNo"];
+  const mandatoryFields = ["name", "email", "organisation", "country", "city", "state", "phoneNo"];
 
   const validateForm = () => {
     const newErrors = {};
@@ -125,6 +128,36 @@ function ContactForm() {
         {/* Form Container */}
         <div className="rounded-[28px] border border-[color:var(--color-border)] bg-white/70 backdrop-blur shadow-lg p-8 sm:p-12">
           <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Country Field */}
+            <div>
+              <label className="block text-sm font-semibold text-[color:var(--color-brand)] mb-2">
+                Country <span className="text-red-500">*</span>
+              </label>
+              <select
+                name="country"
+                value={formData.country}
+                onChange={handleChange}
+                className={`w-full px-4 py-3 rounded-lg border ${
+                  errors.country
+                    ? "border-red-500 bg-red-50"
+                    : "border-[color:var(--color-border)] bg-white/50"
+                } focus:outline-none focus:ring-2 focus:ring-[color:var(--color-gold)] transition`}
+              >
+                <option value="">Select your country</option>
+                <option value="India">India</option>
+                <option value="United States">United States</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Canada">Canada</option>
+                <option value="Australia">Australia</option>
+                <option value="Germany">Germany</option>
+                <option value="France">France</option>
+                <option value="Singapore">Singapore</option>
+                <option value="Japan">Japan</option>
+                <option value="Other">Other</option>
+              </select>
+              {errors.country && <p className="mt-1 text-xs text-red-500">{errors.country}</p>}
+            </div>
+
             {/* Name Field */}
             <div>
               <label className="block text-sm font-semibold text-[color:var(--color-brand)] mb-2">
@@ -198,6 +231,27 @@ function ContactForm() {
                 placeholder="Your designation"
                 className="w-full px-4 py-3 rounded-lg border border-[color:var(--color-border)] bg-white/50 focus:outline-none focus:ring-2 focus:ring-[color:var(--color-gold)] transition"
               />
+            </div>
+
+
+            {/* City Field */}
+            <div>
+              <label className="block text-sm font-semibold text-[color:var(--color-brand)] mb-2">
+                City <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                name="city"
+                value={formData.city}
+                onChange={handleChange}
+                placeholder="Your city"
+                className={`w-full px-4 py-3 rounded-lg border ${
+                  errors.city
+                    ? "border-red-500 bg-red-50"
+                    : "border-[color:var(--color-border)] bg-white/50"
+                } focus:outline-none focus:ring-2 focus:ring-[color:var(--color-gold)] transition`}
+              />
+              {errors.city && <p className="mt-1 text-xs text-red-500">{errors.city}</p>}
             </div>
 
             {/* State Field */}
