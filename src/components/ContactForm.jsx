@@ -18,7 +18,7 @@ function ContactForm() {
   const [submitMessage, setSubmitMessage] = useState("");
   const [errors, setErrors] = useState({});
 
-  const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyOe6jApRf7KEVxsC-A8LtpujxZKmIygqg_2k9XOJWkIsSgkWBERkERObLcVmttM2Tf/exec";
+  const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyqBGUNlNhac-dQ0CnDFtbV6HDsFylzdrGLlPW3vmu02NweQHYS7GDwLdGtGBlkgrWa/exec";
 
   const mandatoryFields = ["name", "email", "organisation", "country", "city", "state", "phoneNo"];
 
