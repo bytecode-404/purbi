@@ -6,8 +6,7 @@ function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    organisation: "",
-    designation: "",
+    profession: "",
     country: "",
     city: "",
     state: "",
@@ -18,9 +17,9 @@ function ContactForm() {
   const [submitMessage, setSubmitMessage] = useState("");
   const [errors, setErrors] = useState({});
 
-  const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyqBGUNlNhac-dQ0CnDFtbV6HDsFylzdrGLlPW3vmu02NweQHYS7GDwLdGtGBlkgrWa/exec";
+  const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyRe_Ourx2f5wDsnyngKcju99cMCeLBPnMrBzR_FvObhyVnCZ7vXR3ukV5xou99Bi_9/exec";
 
-  const mandatoryFields = ["name", "email", "organisation", "country", "city", "state", "phoneNo"];
+  const mandatoryFields = ["name", "email", "profession", "country", "city", "state", "phoneNo"];
 
   const validateForm = () => {
     const newErrors = {};
@@ -82,8 +81,7 @@ function ContactForm() {
         setFormData({
           name: "",
           email: "",
-          organisation: "",
-          designation: "",
+          profession: "",
           country: "",
           city: "",
           state: "",
@@ -170,39 +168,36 @@ function ContactForm() {
               {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email}</p>}
             </div>
 
-            {/* Organisation Field */}
+            {/* Profession Field */}
             <div>
               <label className="block text-sm font-semibold text-[color:var(--color-brand)] mb-2">
-                Organisation <span className="text-red-500">*</span>
+                Profession <span className="text-red-500">*</span>
               </label>
-              <input
-                type="text"
-                name="organisation"
-                value={formData.organisation}
+              <select
+                name="profession"
+                value={formData.profession}
                 onChange={handleChange}
-                placeholder="Your organization"
                 className={`w-full px-4 py-3 rounded-lg border ${
-                  errors.organisation
+                  errors.profession
                     ? "border-red-500 bg-red-50"
                     : "border-[color:var(--color-border)] bg-white/50"
                 } focus:outline-none focus:ring-2 focus:ring-[color:var(--color-gold)] transition`}
-              />
-              {errors.organisation && <p className="mt-1 text-xs text-red-500">{errors.organisation}</p>}
-            </div>
-
-            {/* Designation Field */}
-            <div>
-              <label className="block text-sm font-semibold text-[color:var(--color-brand)] mb-2">
-                Designation
-              </label>
-              <input
-                type="text"
-                name="designation"
-                value={formData.designation}
-                onChange={handleChange}
-                placeholder="Your designation"
-                className="w-full px-4 py-3 rounded-lg border border-[color:var(--color-border)] bg-white/50 focus:outline-none focus:ring-2 focus:ring-[color:var(--color-gold)] transition"
-              />
+              >
+                <option value="">Select your profession</option>
+                <option value="Student">Student</option>
+                <option value="Entrepreneur">Entrepreneur</option>
+                <option value="Business Owner">Business Owner</option>
+                <option value="Professional">Professional</option>
+                <option value="Educator">Educator</option>
+                <option value="Artist">Artist</option>
+                <option value="Sports Professional">Sports Professional</option>
+                <option value="Government Official">Government Official</option>
+                <option value="Policy Maker">Policy Maker</option>
+                <option value="Non-Profit/NGO">Non-Profit/NGO</option>
+                <option value="Researcher">Researcher</option>
+                <option value="Other">Other</option>
+              </select>
+              {errors.profession && <p className="mt-1 text-xs text-red-500">{errors.profession}</p>}
             </div>
 
             {/* Country Field */}

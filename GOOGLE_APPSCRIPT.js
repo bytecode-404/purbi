@@ -12,7 +12,7 @@
 // 9. Paste the URL in ContactForm.jsx as GOOGLE_APPS_SCRIPT_URL
 //
 // Expected fields from the contact form:
-// name*, email*, organisation*, designation, country*, city*, state*, phoneNo*
+// name*, email*, profession*, country*, city*, state*, phoneNo*
 // (asterisk = required on the frontend)
 
 const SPREADSHEET_ID = "1xYq-BuikiFAMXE4sfTwr12teS8Ez2vaN72o5735FmOg"; // Replace with your Google Sheet ID
@@ -34,8 +34,7 @@ function doPost(e) {
         "Timestamp",
         "Name",
         "Email",
-        "Organisation",
-        "Designation",
+        "Profession",
         "Country",
         "City",
         "State",
@@ -50,8 +49,7 @@ function doPost(e) {
       timestamp,
       data.name || "",
       data.email || "",
-      data.organisation || "",
-      data.designation || "",
+      data.profession || "",
       data.country || "",
       data.city || "",
       data.state || "",
