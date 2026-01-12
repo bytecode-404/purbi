@@ -10,6 +10,10 @@
 // 7. Select "Execute as" your account and "Who has access" as "Anyone"
 // 8. Copy the deployment URL
 // 9. Paste the URL in ContactForm.jsx as GOOGLE_APPS_SCRIPT_URL
+//
+// Expected fields from the contact form:
+// name*, email*, organisation*, designation, country*, city*, state*, phoneNo*
+// (asterisk = required on the frontend)
 
 const SPREADSHEET_ID = "1xYq-BuikiFAMXE4sfTwr12teS8Ez2vaN72o5735FmOg"; // Replace with your Google Sheet ID
 const SHEET_NAME = "PURBI Member Form Responses"; // Name of the sheet where data will be stored
@@ -26,7 +30,17 @@ function doPost(e) {
     // If sheet doesn't exist, create it with headers
     if (!sheet) {
       sheet = spreadsheet.insertSheet(SHEET_NAME);
-      const headers = ["Timestamp", "Name", "Email", "Organisation", "Designation", "State", "Phone No"];
+      const headers = [
+        "Timestamp",
+        "Name",
+        "Email",
+        "Organisation",
+        "Designation",
+        "Country",
+        "City",
+        "State",
+        "Phone No",
+      ];
       sheet.appendRow(headers);
     }
 
@@ -38,6 +52,8 @@ function doPost(e) {
       data.email || "",
       data.organisation || "",
       data.designation || "",
+      data.country || "",
+      data.city || "",
       data.state || "",
       data.phoneNo || "",
     ];
