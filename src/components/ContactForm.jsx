@@ -84,6 +84,8 @@ function ContactForm() {
           email: "",
           organisation: "",
           designation: "",
+          country: "",
+          city: "",
           state: "",
           phoneNo: "",
         });
@@ -168,26 +170,6 @@ function ContactForm() {
               {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email}</p>}
             </div>
 
-            {/* Phone Number Field */}
-            <div>
-              <label className="block text-sm font-semibold text-[color:var(--color-brand)] mb-2">
-                Phone Number <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="tel"
-                name="phoneNo"
-                value={formData.phoneNo}
-                onChange={handleChange}
-                placeholder="+91 XXXXX XXXXX"
-                className={`w-full px-4 py-3 rounded-lg border ${
-                  errors.phoneNo
-                    ? "border-red-500 bg-red-50"
-                    : "border-[color:var(--color-border)] bg-white/50"
-                } focus:outline-none focus:ring-2 focus:ring-[color:var(--color-gold)] transition`}
-              />
-              {errors.phoneNo && <p className="mt-1 text-xs text-red-500">{errors.phoneNo}</p>}
-            </div>
-
             {/* Organisation Field */}
             <div>
               <label className="block text-sm font-semibold text-[color:var(--color-brand)] mb-2">
@@ -222,7 +204,6 @@ function ContactForm() {
                 className="w-full px-4 py-3 rounded-lg border border-[color:var(--color-border)] bg-white/50 focus:outline-none focus:ring-2 focus:ring-[color:var(--color-gold)] transition"
               />
             </div>
-
 
             {/* Country Field */}
             <div>
