@@ -1,4 +1,5 @@
 import Section from "./Section";
+import { FaLinkedin, FaInstagram, FaFacebook } from "react-icons/fa";
 
 function Footer() {
   return (
@@ -13,11 +14,11 @@ function Footer() {
             {/* Brand */}
             <div>
               <div className="flex flex-col items-start">
-                <div className="overflow-hidden rounded-2xl border border-white/25 bg-white/5 p-1 shadow-sm">
+                <div className="h-16 w-16 overflow-hidden rounded-2xl border border-white/25 bg-white shadow-sm">
                   <img
-                    src="/logo.jpeg"
+                    src="/purbi PNG.png"
                     alt="PURBI logo"
-                    className="h-20 w-20 object-cover"
+                    className="h-full w-full object-cover"
                   />
                 </div>
                 <div className="mt-3">
@@ -26,7 +27,7 @@ function Footer() {
                     Connecting East to the World
                   </div>
                 </div>
-              </div>
+              </div>  
 
               <p className="mt-4 text-sm leading-relaxed text-white/70">
                 Purvanchal & Bihar International  building platforms for
@@ -100,22 +101,28 @@ function Footer() {
           {/* Bottom row */}
           <div className="mt-10 border-t border-white/20 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              {["FB", "TW", "IG", "LI", "YT"].map((s) => (
+              {[
+                { icon: FaLinkedin, url: "https://www.linkedin.com/company/purbi-international/", label: "LinkedIn" },
+                { icon: FaInstagram, url: "https://www.instagram.com/purbi_international", label: "Instagram" },
+                { icon: FaFacebook, url: "https://www.facebook.com/purbi.international", label: "Facebook" },
+              ].map((social) => (
                 <a
-                  key={s}
-                  href="#"
-                  aria-label={s}
+                  key={social.label}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
                   className="
                     h-9 w-9 rounded-full
                     border border-white/25
                     grid place-items-center
-                    text-xs text-white/70
+                    text-sm text-white/70
                     hover:text-white
                     hover:border-[color:var(--color-gold)]
                     transition
                   "
                 >
-                  {s}
+                  <social.icon />
                 </a>
               ))}
             </div>

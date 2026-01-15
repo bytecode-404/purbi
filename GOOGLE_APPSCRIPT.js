@@ -12,7 +12,7 @@
 // 9. Paste the URL in ContactForm.jsx as GOOGLE_APPS_SCRIPT_URL
 //
 // Expected fields from the contact form:
-// name*, email*, profession*, country*, city*, state*, phoneNo*
+// name*, email*, profession*, country*, city*, state*, phoneNo*, contribution
 // (asterisk = required on the frontend)
 
 const SPREADSHEET_ID = "1xYq-BuikiFAMXE4sfTwr12teS8Ez2vaN72o5735FmOg"; // Replace with your Google Sheet ID
@@ -39,6 +39,7 @@ function doPost(e) {
         "City",
         "State",
         "Phone No",
+        "How to Contribute",
       ];
       sheet.appendRow(headers);
     }
@@ -54,13 +55,14 @@ function doPost(e) {
       data.city || "",
       data.state || "",
       data.phoneNo || "",
+      data.contribution || "",
     ];
 
     // Append the row to the sheet
     sheet.appendRow(newRow);
 
     // Optional: Send confirmation email
-    sendConfirmationEmail(data.email, data.name);
+    // sendConfirmationEmail(data.email, data.name);
 
     return ContentService.createTextOutput(JSON.stringify({ success: true })).setMimeType(
       ContentService.MimeType.JSON
