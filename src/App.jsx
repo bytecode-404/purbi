@@ -11,26 +11,40 @@ import CallToAction from "./components/CallToAction";
 import InstitutionalAlignment from "./components/InstitutionalAlignment";
 import Partners from "./components/Partners";
 import GlobalAdvisors from "./components/GlobalAdvisors";
+import GlobalAdvisorsPage from "./components/GlobalAdvisorsPage";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="font-sans">
-      <NavBar />
-      <Hero />
-      <Blueprint />
-      <WhatIsPurbi />
-      <CoreFocusAreas />
-      <WhyPurbi />
-      <CoreDomains />
-      <WhoWeServe />
-      <CallToAction />
-      <InstitutionalAlignment />
-      <GlobalAdvisors />
-      <ContactForm />
-      <Footer />
-      <Analytics />
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <Blueprint />
+                <WhatIsPurbi />
+                <CoreFocusAreas />
+                <WhyPurbi />
+                <CoreDomains />
+                <WhoWeServe />
+                <CallToAction />
+                <InstitutionalAlignment />
+                {/* <GlobalAdvisors /> removed from home page */}
+                <ContactForm />
+              </>
+            }
+          />
+          <Route path="/advisors" element={<GlobalAdvisorsPage />} />
+        </Routes>
+        <Footer />
+        <Analytics />
+      </Router>
     </div>
   );
 }

@@ -54,22 +54,31 @@ function NavBar() {
             {/* Center: links (desktop) */}
             <ul className="hidden md:flex items-center gap-1 rounded-full border border-[color:var(--color-border)] bg-white/70 px-2 py-1 shadow-sm">
               {[
-                ["Home", "#home"],
+                ["Home", "/"],
                 ["About", "#about"],
                 ["Programs", "#programs"],
                 ["Initiatives", "#initiatives"],
-                ["Global Advisors", "#advisors"],
+                ["Global Advisors", "/advisors"],
                 ["Contact", "#contact"],
               ].map(([label, href]) => (
                 <li key={href}>
-                  <a
-                    href={href}
-                    className="relative inline-flex items-center rounded-full px-4 py-2 text-sm font-medium text-[color:var(--color-ink)]/80 transition hover:text-[color:var(--color-peacock)]"
-                  >
-                    {label}
-                    {/* subtle underline on hover */}
-                    <span className="pointer-events-none absolute inset-x-4 -bottom-[2px] h-[2px] origin-left scale-x-0 rounded-full bg-[color:var(--color-gold)] transition-transform duration-200 hover:scale-x-100 md:group-hover:scale-x-100" />
-                  </a>
+                  {href.startsWith("/") ? (
+                    <a
+                      href={href}
+                      className="relative inline-flex items-center rounded-full px-4 py-2 text-sm font-medium text-[color:var(--color-ink)]/80 transition hover:text-[color:var(--color-peacock)]"
+                    >
+                      {label}
+                      <span className="pointer-events-none absolute inset-x-4 -bottom-[2px] h-[2px] origin-left scale-x-0 rounded-full bg-[color:var(--color-gold)] transition-transform duration-200 hover:scale-x-100 md:group-hover:scale-x-100" />
+                    </a>
+                  ) : (
+                    <a
+                      href={href}
+                      className="relative inline-flex items-center rounded-full px-4 py-2 text-sm font-medium text-[color:var(--color-ink)]/80 transition hover:text-[color:var(--color-peacock)]"
+                    >
+                      {label}
+                      <span className="pointer-events-none absolute inset-x-4 -bottom-[2px] h-[2px] origin-left scale-x-0 rounded-full bg-[color:var(--color-gold)] transition-transform duration-200 hover:scale-x-100 md:group-hover:scale-x-100" />
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -150,22 +159,34 @@ function NavBar() {
             <div className="px-4 pb-4">
               <div className="rounded-3xl border border-[color:var(--color-border)] bg-white/70 p-2">
                 {[
-                  ["Home", "#home"],
+                  ["Home", "/"],
                   ["About", "#about"],
                   ["Programs", "#programs"],
                   ["Initiatives", "#initiatives"],
-                  ["Global Advisors", "#advisors"],
+                  ["Global Advisors", "/advisors"],
                   ["Contact", "#contact"],
                 ].map(([label, href]) => (
-                  <a
-                    key={href}
-                    href={href}
-                    onClick={closeDrawer}
-                    className="flex items-center justify-between rounded-2xl px-4 py-3 text-sm font-medium text-[color:var(--color-ink)]/85 hover:bg-black/5"
-                  >
-                    <span>{label}</span>
-                    <span className="h-2 w-2 rounded-full bg-[color:var(--color-gold)]/70" />
-                  </a>
+                  href.startsWith("/") ? (
+                    <a
+                      key={href}
+                      href={href}
+                      onClick={closeDrawer}
+                      className="flex items-center justify-between rounded-2xl px-4 py-3 text-sm font-medium text-[color:var(--color-ink)]/85 hover:bg-black/5"
+                    >
+                      <span>{label}</span>
+                      <span className="h-2 w-2 rounded-full bg-[color:var(--color-gold)]/70" />
+                    </a>
+                  ) : (
+                    <a
+                      key={href}
+                      href={href}
+                      onClick={closeDrawer}
+                      className="flex items-center justify-between rounded-2xl px-4 py-3 text-sm font-medium text-[color:var(--color-ink)]/85 hover:bg-black/5"
+                    >
+                      <span>{label}</span>
+                      <span className="h-2 w-2 rounded-full bg-[color:var(--color-gold)]/70" />
+                    </a>
+                  )
                 ))}
               </div>
 
